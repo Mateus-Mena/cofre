@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <title>O Mecanismo</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>O MECANISMO</h1>
+        <p>Runas de Desbloqueio</p>
+    </header>
+
+    <main>
+
+        <section class="painel">
+
+            <div class="dado" id="esquerdo">
+
+                <p>D12</p>
+
+                <div class="valor" id="valor-esquerdo">1</div>
+
+                <div class="controles">
+                    <button data-dado="esquerdo" data-acao="menos">−</button>
+                    <button data-dado="esquerdo" data-acao="mais">+</button>
+                </div>
+
+                <span class="status" id="status-esquerdo">AGUARDANDO</span>
+
+            </div>
+
+            <div class="dado" id="direito">
+
+                <p>D12</p>
+
+                <div class="valor" id="valor-direito">1</div>
+
+                <div class="controles">
+                    <button data-dado="direito" data-acao="menos">−</button>
+                    <button data-dado="direito" data-acao="mais">+</button>
+                </div>
+
+                <span class="status" id="status-direito">AGUARDANDO</span>
+
+            </div>
+
+            <div class="dado" id="meio">
+
+                <p>D20</p>
+
+                <div class="valor" id="valor-meio">1</div>
+
+                <div class="controles">
+                    <button data-dado="meio" data-acao="menos">−</button>
+                    <button data-dado="meio" data-acao="mais">+</button>
+                </div>
+
+                <span class="status" id="status-meio">AGUARDANDO</span>
+
+            </div>
+
+            <div class="dado" id="baixo">
+
+                <p>D6</p>
+
+                <div class="valor" id="valor-baixo">1</div>
+
+                <div class="controles">
+                    <button data-dado="baixo" data-acao="menos">−</button>
+                    <button data-dado="baixo" data-acao="mais">+</button>
+                </div>
+
+                <span class="status" id="status-baixo">AGUARDANDO</span>
+
+            </div>
+
+        </section>
+
+        <section class="area-confirmacao">
+
+            <p id="mensagem">
+                O mecanismo aguarda uma combinação.
+            </p>
+
+            <button id="confirmar">CONFIRMAR COMBINAÇÃO</button>
+
+            <button id="reiniciar">REINICIAR MECANISMO</button>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

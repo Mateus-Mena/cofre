@@ -1,0 +1,269 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #080c12;
+    color: #dce2e9;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    padding: 25px 15px 10px;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    letter-spacing: 5px;
+    color: #c1ccd8;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #8294a8;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.painel {
+    position: relative;
+    width: min(92vw, 500px);
+    aspect-ratio: 435 / 506;
+    margin-top: 0;
+
+    background-image:
+        linear-gradient(#080c1220, #080c1220),
+        url("simbulo.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dado {
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    width: 22%;
+    aspect-ratio: 1;
+
+    border: 2px solid #8293a5;
+    border-radius: 50%;
+
+    background: #111923e8;
+
+    box-shadow: 0 0 15px #000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    z-index: 2;
+}
+
+.dado p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #9aabbc;
+}
+
+.valor {
+    font-family: Georgia, serif;
+    font-size: clamp(20px, 5vw, 32px);
+    color: #f0f3f7;
+}
+
+.controles {
+    display: flex;
+    gap: 8px;
+}
+
+.controles button {
+    width: 25px;
+    height: 23px;
+
+    border: 1px solid #66798e;
+    background: #202c3a;
+    color: white;
+
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.controles button:hover {
+    background: #53677d;
+}
+
+.status {
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: #8292a4;
+    text-align: center;
+}
+
+/* D12 ESQUERDO */
+
+#esquerdo {
+    left: 25%;
+    top: 39%;
+}
+
+/* D12 DIREITO */
+
+#direito {
+    left: 75%;
+    top: 39%;
+}
+
+/* D20 CENTRAL */
+
+#meio {
+    left: 50%;
+    top: 50%;
+    width: 25%;
+}
+
+/* D6 INFERIOR */
+
+#baixo {
+    left: 50%;
+    top: 72%;
+    width: 21%;
+}
+
+.dado.travado {
+    border-color: #d5dce5;
+    background: #283442ed;
+    box-shadow: 0 0 18px #8da1b566;
+}
+
+.dado.travado .status {
+    color: #e5edf5;
+}
+
+.dado.travado .controles button {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.area-confirmacao {
+    width: min(90%, 450px);
+    text-align: center;
+    margin: 5px 0 35px;
+}
+
+#mensagem {
+    min-height: 40px;
+    margin-bottom: 15px;
+
+    color: #aab9c9;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#confirmar,
+#reiniciar {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+
+    border: 1px solid #70849a;
+    background: #1a2633;
+    color: #e2e9f0;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#confirmar:hover,
+#reiniciar:hover {
+    background: #34485e;
+}
+
+#reiniciar {
+    background: transparent;
+    border-color: #394858;
+    color: #8998a8;
+}
+
+@media (max-width: 500px) {
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .painel {
+        width: 96vw;
+    }
+
+    .dado {
+        width: 22%;
+    }
+
+    #meio {
+        width: 25%;
+    }
+
+    #baixo {
+        width: 21%;
+    }
+
+    .dado p {
+        font-size: 8px;
+    }
+
+    .status {
+        font-size: 6px;
+    }
+
+    .controles {
+        gap: 4px;
+    }
+
+    .controles button {
+        width: 21px;
+        height: 20px;
+        font-size: 14px;
+    }
+}
+
+.dado.bloqueado {
+    opacity: 0.45;
+    filter: grayscale(1);
+}
+
+.dado.bloqueado .controles button {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.controles button:disabled {
+    cursor: not-allowed;
+}
+
+#confirmar:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
